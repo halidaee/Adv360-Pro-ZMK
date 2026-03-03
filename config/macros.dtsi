@@ -222,3 +222,27 @@
     bindings = <&mkp MB1 &mkp MB1>;
     display-name = "Double Click";
   };
+
+  macro_ralt_space: macro_ralt_space {
+    compatible = "zmk,behavior-macro";
+    label = "RALT_SPACE";
+    #binding-cells = <0>;
+    bindings = <&kp RALT>, <&kp SPACE>;
+    display-name = "SuperWhisper";
+  };
+
+  macro_r_pipe: macro_r_pipe {
+    compatible = "zmk,behavior-macro";
+    label = "R_PIPE";
+    #binding-cells = <0>;
+    bindings = <&kp SPACE>, <&kp PERCENT>, <&kp GT>, <&kp PERCENT>, <&kp SPACE>;
+    display-name = "R Pipe";
+  };
+
+  macro_r_plus: macro_r_plus {
+    compatible = "zmk,behavior-macro";
+    label = "R_PLUS";
+    #binding-cells = <0>;
+    bindings = <&kp SPACE>, <&kp PLUS>, <&kp SPACE>;
+    display-name = "R Plus";
+  };

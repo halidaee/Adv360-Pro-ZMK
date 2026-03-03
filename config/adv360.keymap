@@ -20,6 +20,16 @@
           flavor = "tap-preferred";
           bindings = <&kp>, <&kp>;
       };
+
+      mac_ht: mac_hold_tap {
+          compatible = "zmk,behavior-hold-tap";
+          label = "MAC_HOLD_TAP";
+          #binding-cells = <2>;
+          tapping-term-ms = <300>;
+          quick_tap_ms = <200>;
+          flavor = "tap-preferred";
+          bindings = <&kp>, <&kp>;
+      };
     };
 
   keymap {
@@ -28,11 +38,11 @@
     default_layer {
       display-name = "Base";
       bindings = <
-        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog 1                                                           &mo 3 &kp N6 &kp N7 &kp N8    &kp N9   &kp N0   &kp MINUS
-        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                            &none &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
-        &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &none           &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL           &none &kp H  &kp J  &kp K     &kp L    &kp SEMI &kp SQT
-        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                            &kp HOME &kp PG_UP                           &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &kp BSPC &kp DEL   &kp END  &kp PG_DN &kp ENTER &kp SPACE              &kp UP &kp DOWN  &kp LBKT &kp RBKT &mo 2
+        &kp GRAVE            &kp N1              &kp N2              &kp N3              &kp N4              &mac_ht LG(LS(N5)) N5 &tog 1                                                                            &mo 3 &kp N6 &kp N7  &kp N8    &kp N9  &kp N0              &kp MINUS
+        &mt LC(LA(LSFT)) TAB &kp Q               &mac_ht LG(W) W     &kp E               &kp R               &mac_ht LG(T) T        &none                                                                             &none &kp Y  &kp U   &kp I     &kp O   &mac_ht LG(LS(P)) P &kp BSLH
+        &kp LC(LA(LS(LGUI))) &kp A               &mac_ht LG(S) S     &kp D               &mac_ht LG(F) F     &kp G                  &none           &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL                          &none &kp H  &lt 4 J &kp K     &kp L   &kp SEMI            &kp SQT
+        &kp LSHFT            &mac_ht LG(Z) Z     &mac_ht LG(X) X     &mac_ht LG(C) C     &mac_ht LG(V) V     &kp B                                           &kp DEL  &mt LC(LA(LS(LGUI))) ENTER                           &kp N  &kp M   &kp COMMA &kp DOT &kp FSLH            &kp RSHFT
+        &mo 2                &kp GRAVE           &kp CAPS            &kp LEFT            &kp RIGHT                          &kp BSPC &mt LC(LA(LSFT)) ESC &kp LG(SPACE)    &kp RALT &macro_ralt_space &kp SPACE              &kp UP  &kp DOWN  &kp LBKT &kp RBKT &mo 2
       >;
     };
     keypad {
@@ -65,23 +75,29 @@
         &none &none        &none        &none        &none                                       &none &none &none &none      &bl BL_TOG &rgb_ug RGB_TOG                                     &bl BL_INC   &bl BL_DEC   &none &none &none
       >;
     };
-    extra1 { 
-      display-name = "Red";    
+    extra1 {
+      display-name = "Sym";
+      bindings = <
+        &trans &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT     &trans                                                           &trans &kp CARET &kp AMPS &kp ASTRK &trans    &trans    &trans
+        &trans &kp TILDE &trans    &kp LBRC  &kp RBRC  &macro_r_pipe &trans                                                            &trans &trans    &kp UNDER &kp PLUS &kp PIPE  &kp DQT   &trans
+        &trans &kp GRAVE &trans    &kp LPAR  &kp RPAR  &macro_r_plus &trans           &trans    &trans    &trans    &trans              &trans &kp MINUS &trans   &kp EQUAL &kp BSLH  &kp SQT   &trans
+        &trans &trans    &trans    &kp LBKT  &kp RBKT  &trans                                   &trans    &trans                              &trans    &trans   &trans    &trans     &trans    &trans
+        &trans &trans    &trans    &trans    &trans                   &trans    &trans    &trans    &trans    &trans    &trans                     &trans   &trans    &trans    &trans    &trans
+      >;
+    };
+
+    extra2 {
+      display-name = "Purple";
       status = "reserved";
     };
 
-    extra2 { 
-      display-name = "Purple";    
+    extra3 {
+      display-name = "Cyan";
       status = "reserved";
     };
 
-    extra3 { 
-      display-name = "Cyan";    
-      status = "reserved";
-    };
-
-    extra4 { 
-      display-name = "Yellow";    
+    extra4 {
+      display-name = "Yellow";
       status = "reserved";
     };
   };
