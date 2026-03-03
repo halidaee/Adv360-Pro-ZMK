@@ -39,10 +39,10 @@
       display-name = "Base";
       bindings = <
         &kp GRAVE            &kp N1              &kp N2              &kp N3              &kp N4              &mac_ht LG(LS(N5)) N5 &tog 1                                                                            &mo 3 &kp N6 &kp N7  &kp N8    &kp N9  &kp N0              &kp MINUS
-        &mt LC(LA(LSFT)) TAB &kp Q               &mac_ht LG(W) W     &kp E               &kp R               &mac_ht LG(T) T        &none                                                                             &none &kp Y  &kp U   &kp I     &kp O   &mac_ht LG(LS(P)) P &kp BSLH
-        &kp LC(LA(LS(LGUI))) &kp A               &mac_ht LG(S) S     &kp D               &mac_ht LG(F) F     &kp G                  &none           &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL                          &none &kp H  &lt 4 J &kp K     &kp L   &kp SEMI            &kp SQT
+        &mt LC(LA(LSFT)) TAB &kp Q               &mac_ht LG(W) W     &kp E               &kp R               &mac_ht LG(T) T        &kp MINUS                                                                         &kp FSLH &kp Y  &kp U   &kp I     &kp O   &mac_ht LG(LS(P)) P &kp BSLH
+        &kp LC(LA(LS(LGUI))) &kp A               &mac_ht LG(S) S     &kp D               &mac_ht LG(F) F     &kp G                  &kp LBKT        &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL                          &kp RBKT &kp H  &lt 4 J &kp K     &kp L   &kp SEMI            &kp SQT
         &kp LSHFT            &mac_ht LG(Z) Z     &mac_ht LG(X) X     &mac_ht LG(C) C     &mac_ht LG(V) V     &kp B                                           &kp DEL  &mt LC(LA(LS(LGUI))) ENTER                           &kp N  &kp M   &kp COMMA &kp DOT &kp FSLH            &kp RSHFT
-        &mo 2                &kp GRAVE           &kp CAPS            &kp LEFT            &kp RIGHT                          &kp BSPC &mt LC(LA(LSFT)) ESC &kp LG(SPACE)    &kp RALT &macro_ralt_space &kp SPACE              &kp UP  &kp DOWN  &kp LBKT &kp RBKT &mo 2
+        &mo 2                &kp GRAVE           &kp BSLH            &kp LEFT            &kp RIGHT                          &kp BSPC &mt LC(LA(LSFT)) ESC &kp LG(SPACE)    &kp RALT &macro_ralt_space &kp SPACE              &kp UP  &kp DOWN  &kp LBKT &kp RBKT &mo 2
       >;
     };
     keypad {
